@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar App</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="cotainer">
+        <div class="navbar">
+            <button class="navbar__bth previous">←</button>
+            <div class="navbar__month">leden</div>
+            <button class="navbar__bth next">→</button>
+        </div>
+        <div class="calendar">
+            <div class="calendar__weekdays">
+                <div>PO</div>
+                <div>ÚT</div>
+                <div>ST</div>
+                <div>ČT</div>
+                <div>PÁ</div>
+                <div>SO</div>
+                <div>NE</div>
+            </div>
+            <div class="calendar__dates"></div>
+        </div>
+        <div class="event-info">
+            <h3>Název události</h3>
+            <p>datum události</p>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
