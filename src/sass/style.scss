@@ -24,7 +24,7 @@ html {
 }
 
 .red-container {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     background-color: $primary-red;
     border-radius: 5px 5px 0 0;
     display: grid;
@@ -44,10 +44,18 @@ html {
     &__btn {
         background-color: $primary-red;
         border: none;
+        border-radius: 5px;
+        transition: background-color 300ms ease;
+
+        &:is(:hover,
+        :focus,:active) {
+        background-color: #BB2548;
+        }
     }
 
     &__month {
         justify-self: center;
+        align-self: center;
     }
 }
 
@@ -69,5 +77,5 @@ html {
     margin-inline: auto;
     background-color: #0A2463;
     border-radius: 0 0 5px 5px;
-    padding: 1rem;
+    padding: 1.5rem;
 }
