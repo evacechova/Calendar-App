@@ -1,5 +1,9 @@
+let today = new Date()
+let thisMonth = today.getMonth();
+
 const monthNav = ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"];
 let index = 0;
+let year = 2024;
 
 const setMonth = (monthName) => {
     const month = document.querySelector('#month');
@@ -26,7 +30,7 @@ const previousMonth = () => {
     setMonth(monthNav[index]);
 }
 
-setMonth(monthNav[index]);
+setMonth(monthNav[thisMonth]);
 document.querySelector('#next').addEventListener('click', nextMonth);
 document.querySelector('#previous').addEventListener('click', previousMonth);
 
