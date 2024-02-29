@@ -2,8 +2,10 @@ let today = new Date()
 let thisMonth = today.getMonth();
 let thisYear = today.getFullYear();
 
+//NavBar settings
+
 const monthNav = ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"];
-let index = 0;
+let monthIndex = thisMonth;
 let year = thisYear;
 
 const setMonth = (monthName) => {
@@ -12,28 +14,36 @@ const setMonth = (monthName) => {
 }
 
 const nextMonth = () => {
-    index++
+    monthIndex++
     
-    if (index === monthNav.length) {
-        index = 0;
+    if (monthIndex === monthNav.length) {
+        monthIndex = 0;
         year++
     }
     
-    setMonth(`${monthNav[index]} ${year}`);
+    setMonth(`${monthNav[monthIndex]} ${year}`);
 }
 
 const previousMonth = () => {
-    index--
+    monthIndex--
 
-    if (index === -1) {
-        index = monthNav.length -1;
+    if (monthIndex === -1) {
+        monthIndex = monthNav.length -1;
         year--
     }
 
-    setMonth(`${monthNav[index]} ${year}`);
+    setMonth(`${monthNav[monthIndex]} ${year}`);
 }
 
 setMonth(`${monthNav[thisMonth]} ${thisYear}`);
 document.querySelector('#next').addEventListener('click', nextMonth);
 document.querySelector('#previous').addEventListener('click', previousMonth);
+
+//-------------------------------------------
+
+//Calendar Body
+
+const daysInMonth = (year, month) => new Date(year, month + 1, 0 ).getDate();
+console.log(monthIndex);
+console.log(daysInMonth(year, monthIndex));
 
