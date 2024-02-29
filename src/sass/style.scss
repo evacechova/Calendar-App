@@ -1,6 +1,7 @@
 //variables
 
 $primary-red: #d8315b;
+$highlight: #0A2463;
 
 //------------------------------------
 
@@ -42,6 +43,7 @@ html {
     justify-content: space-between;
 
     &__btn {
+        min-height: 3rem;
         background-color: $primary-red;
         border: none;
         border-radius: 5px;
@@ -49,7 +51,7 @@ html {
 
         &:is(:hover,
         :focus,:active) {
-        background-color: #BB2548;
+        background-color: $highlight;
         }
     }
 
@@ -60,17 +62,11 @@ html {
 }
 
 .calendar {
-
-    &__weekdays {
-        display: flex;
-        flex-grow: 1;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-
-        & div {
-            padding-inline: 0.5rem;
-        }
-    }
+    display:  grid;
+        grid-template-columns: repeat(7, minmax(1rem, 1fr));
+        grid-template-rows: repeat(6, minmax(1rem, 1fr));
+        text-align: center;
+        gap: 1rem;
 }
 
 .event {
