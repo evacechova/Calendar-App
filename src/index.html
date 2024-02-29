@@ -13,30 +13,31 @@
 
 </head>
 <body>
-    <div class="cotainer">
-        <div class="navbar">
-            <button class="navbar__bth previous">←</button>
-            <div class="navbar__month">leden</div>
-            <button class="navbar__bth next">→</button>
-        </div>
-        <div class="calendar">
-            <div class="calendar__weekdays">
-                <div>PO</div>
-                <div>ÚT</div>
-                <div>ST</div>
-                <div>ČT</div>
-                <div>PÁ</div>
-                <div>SO</div>
-                <div>NE</div>
+    <div class="wrapper">
+        <div class="red-container">
+            <div class="navbar">
+                <button class="navbar__btn" id="previous">←</button>
+                <div class="navbar__month">leden</div>
+                <button class="navbar__btn" id="next">→</button>
             </div>
-            <div class="calendar__dates"></div>
+            <div class="calendar">
+                <div class="calendar__weekdays">
+                    <div>PO</div>
+                    <div>ÚT</div>
+                    <div>ST</div>
+                    <div>ČT</div>
+                    <div>PÁ</div>
+                    <div>SO</div>
+                    <div>NE</div>
+                </div>
+                <div class="calendar__dates"></div>
+            </div>
         </div>
-        <div class="event-info">
+        <div class="event">
             <h3>Název události</h3>
             <p>datum události</p>
         </div>
     </div>
-
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>
