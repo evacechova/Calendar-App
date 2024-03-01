@@ -22,6 +22,12 @@ const nextMonth = () => {
     }
     
     setMonth(`${monthNav[monthIndex]} ${year}`);
+    dayDivs = document.querySelectorAll('.day-no');
+    firstDayOfMonth(year, monthIndex);
+    dayPointer = firstDayOfMonth (year, monthIndex) - 1;
+    daysInMonth(year, thisMonth);
+    monthLength = daysInMonth(year, thisMonth);
+    dayToDivAsignment();
 }
 
 const previousMonth = () => {
@@ -33,6 +39,12 @@ const previousMonth = () => {
     }
 
     setMonth(`${monthNav[monthIndex]} ${year}`);
+    dayDivs = document.querySelectorAll('.day-no');
+    firstDayOfMonth(year, monthIndex);
+    dayPointer = firstDayOfMonth (year, monthIndex) - 1;
+    daysInMonth(year, thisMonth);
+    monthLength = daysInMonth(year, thisMonth);
+    dayToDivAsignment();
 }
 
 setMonth(`${monthNav[thisMonth]} ${thisYear}`);
@@ -43,12 +55,29 @@ document.querySelector('#previous').addEventListener('click', previousMonth);
 
 //Calendar Body
 
-const daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
+const daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate(); //determines the number of days in a month
 
-console.log(daysInMonth(2024, thisMonth))
+console.log(daysInMonth(year, thisMonth));
 
-const firstDayOfMonth = (year, month) => new Date(year, month, 1).getDay();
+const firstDayOfMonth = (year, month) => new Date(year, month, 1).getDay(); //determines what day of the week the new month starts on
 
-console.log(firstDayOfMonth(2024, thisMonth ))
+console.log(firstDayOfMonth(year, thisMonth ));
 
+//----------------------------------------------
 
+let dayDivs = document.querySelectorAll('.day-no'); //selects all day divs
+
+let dayPointer = firstDayOfMonth(year, thisMonth) - 1;
+
+let monthLength = daysInMonth(year, thisMonth);
+
+const dayToDivAsignment = () => {
+    for (let i = 1; i <= monthLength; i++) {
+        dayDivs[dayPointer].textContent = i;
+        dayPointer++;
+        // console.log(i);    
+        // console.log(dayPointer);
+    }
+}
+
+dayToDivAsignment();
