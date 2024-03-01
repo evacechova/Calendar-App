@@ -28,7 +28,7 @@ const nextMonth = () => {
         div.textContent = "";
     }
 
-    dayPointer = firstDayOfMonth (year, monthIndex) - 1;
+    dayPointer = firstDayOfMonth (year, monthIndex);
     monthLength = daysInMonth(year, monthIndex);
     dayToDivAsignment();
 }
@@ -48,7 +48,7 @@ const previousMonth = () => {
         div.textContent = "";
     }
 
-    dayPointer = firstDayOfMonth (year, monthIndex) - 1;
+    dayPointer = firstDayOfMonth (year, monthIndex);
     monthLength = daysInMonth(year, monthIndex);
     dayToDivAsignment();
 }
@@ -73,12 +73,18 @@ console.log(firstDayOfMonth(year, thisMonth ));
 
 let dayDivs = document.querySelectorAll('.day-no'); //selects all day divs
 
-let dayPointer = firstDayOfMonth(year, thisMonth) - 1;
+let dayPointer = firstDayOfMonth(year, thisMonth); //- 1;
 
 let monthLength = daysInMonth(year, thisMonth);
 
 const dayToDivAsignment = () => {
     console.log(dayPointer);
+    if (dayPointer === 0) {
+        dayPointer = 6;
+    } else {
+        dayPointer--;
+    }
+
     for (let i = 1; i <= monthLength; i++) {
         dayDivs[dayPointer].textContent = i;
         dayPointer++;
