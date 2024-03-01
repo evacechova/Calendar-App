@@ -43,7 +43,12 @@ document.querySelector('#previous').addEventListener('click', previousMonth);
 
 //Calendar Body
 
-const daysInMonth = (year, month) => new Date(year, month + 1, 0 ).getDate();
-console.log(monthIndex);
-console.log(daysInMonth(year, monthIndex));
+const daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
+
+console.log(daysInMonth(2024, thisMonth))
+
+const firstDayOfMonth = (year, month) => new Date(year, month, 1).getDay();
+
+console.log(firstDayOfMonth(2024, thisMonth ))
+
 
