@@ -2,6 +2,7 @@
 
 $primary-red: #d8315b;
 $highlight: #0A2463;
+$highlight2: #3E92CC;
 
 //------------------------------------
 
@@ -64,9 +65,24 @@ html {
 .calendar {
     display:  grid;
         grid-template-columns: repeat(7, minmax(1rem, 1fr));
-        grid-template-rows: repeat(6, minmax(1rem, 1fr));
+        grid-template-rows: repeat(7, minmax(1rem, 1fr));
         text-align: center;
-        gap: 1rem;
+        //gap: 1rem;
+
+    .day-name {
+        padding: 0.5rem;
+    }
+
+    .day-no {
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: background-color 200ms ease;
+    }
+        
+    .day-no:is(:hover,
+    :focus,:active) {
+    background-color: $highlight2;
+    } 
 }
 
 .event {
