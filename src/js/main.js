@@ -69,11 +69,9 @@ const firstDayOfMonth = (year, month) => new Date(year, month, 1).getDay(); //de
 
 console.log(firstDayOfMonth(year, thisMonth ));
 
-//----------------------------------------------
-
 let dayDivs = document.querySelectorAll('.day-no'); //selects all day divs
 
-let dayPointer = firstDayOfMonth(year, thisMonth); //- 1;
+let dayPointer = firstDayOfMonth(year, thisMonth);
 
 let monthLength = daysInMonth(year, thisMonth);
 
@@ -94,3 +92,21 @@ const dayToDivAsignment = () => {
 }
 
 dayToDivAsignment();
+
+//----------------------------------------------------
+
+//Modal
+
+const modal = document.querySelector('#modal');
+const openModalArray = document.querySelectorAll('.day-no');
+const closeModal = document.querySelector('.modal__close');
+
+for (const modalButton of openModalArray) {
+    modalButton.addEventListener('click', () => {
+        modal.showModal();
+    })
+}
+
+closeModal.addEventListener('click', () => {
+    modal.close();
+})
