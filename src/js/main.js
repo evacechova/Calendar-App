@@ -107,7 +107,11 @@ const divHighlightOn = () => {
             for(const div of dayDivs) {
                 div.classList.remove('markedDiv');
             }
-            div.classList.add('markedDiv');
+
+            if (div.classList.contains('has-number')){
+                div.classList.add('markedDiv');
+            }
+            
         })
     }
 }
