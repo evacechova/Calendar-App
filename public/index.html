@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar App</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="red-container">
+            <div class="navbar">
+                <button class="navbar__btn" id="previous">←</button>
+                <div class="navbar__month" id="month">leden</div>
+                <button class="navbar__btn" id="next">→</button>
+            </div>
+            <div class="calendar">
+                    <div class="day-name">PO</div>
+                    <div class="day-name">ÚT</div>
+                    <div class="day-name">ST</div>
+                    <div class="day-name">ČT</div>
+                    <div class="day-name">PÁ</div>
+                    <div class="day-name">SO</div>
+                    <div class="day-name">NE</div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                    <div class="day-no"></div>
+                </div>
+        </div>
+        <div class="event">
+            <h3 id="event-description--saved">Popis události</h3>
+            <p id="event-date--saved">datum konání</p>
+        </div>
+    </div>
+
+    <!--Modal-->
+
+    <dialog class="modal" id="modal">
+        <a href="#" class="modal__close">
+            ×
+        </a>
+        <form class="form" method="dialog" id="form">            
+            <label for="event-description" class="form__label">popis události</label>
+            <input class="form__item" type="text" name="event-description" id="event-description" placeholder="Insert a short even description" required>
+            
+            <label for="start-date" class="form__label">začátek události</label>
+            <input class="form__item" type="date" name="start-date" id="start-date" placeholder="dd. mm. rrrrr" required>
+
+            <label for="end-date" class="form__label">konec události</label>
+            <input class="form__item" type="date" name="end-date" id="end-date" placeholder="dd. mm. rrrrr" required>
+            
+        <button class="modal__submit-button" type="submit" name="modal__submit-button" id="modal__submit-button" value="save-event">Uložit</button>
+        </form>
+    </dialog>
+
+    <!--JavaScript-->
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
+
