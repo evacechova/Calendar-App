@@ -73,8 +73,11 @@
                 </div>
         </div>
         <div class="event">
-            <h3>Název události</h3>
-            <p>datum události</p>
+            <div class="event__info-wrapper">
+                <h3 id="event-description--saved">Popis události</h3>
+                <p id="event-date--saved">datum konání</p>
+            </div>
+            <button class="button event__create-button" name="event__create-button" id="event__create-button">＋</button>
         </div>
     </div>
 
@@ -84,9 +87,9 @@
         <a href="#" class="modal__close">
             ×
         </a>
-        <form class="form" method="dialog">            
+        <form class="form" method="dialog" id="form">            
             <label for="event-description" class="form__label">popis události</label>
-            <input class="form__item" type="text" name="event-description" id="event-decription" placeholder="Insert a short even description" required>
+            <input class="form__item" type="text" name="event-description" id="event-description" placeholder="Vložte popis události" required>
             
             <label for="start-date" class="form__label">začátek události</label>
             <input class="form__item" type="date" name="start-date" id="start-date" placeholder="dd. mm. rrrrr" required>
@@ -94,7 +97,7 @@
             <label for="end-date" class="form__label">konec události</label>
             <input class="form__item" type="date" name="end-date" id="end-date" placeholder="dd. mm. rrrrr" required>
             
-        <button class="submit-button" type="submit">Uložit</button>
+        <button class="button modal__submit-button" type="submit" name="modal__submit-button" id="modal__submit-button" value="save-event">Uložit</button>
         </form>
     </dialog>
 

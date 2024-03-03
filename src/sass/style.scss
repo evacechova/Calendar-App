@@ -19,6 +19,20 @@ html {
     padding: 0;
 }
 
+.button {
+    background-color: $primary;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 300ms ease;
+
+    &:is(:hover,
+    :focus,:active) {
+    background-color: $highlight2;
+    cursor: pointer;
+    }
+}
+
 .wrapper {
     max-width: 400px;
     min-width: fit-content;
@@ -87,11 +101,23 @@ html {
 }
 
 .event {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr;
     margin-inline: auto;
     background-color: #0A2463;
     border-radius: 0 0 5px 5px;
     padding: 1.5rem;
+
+    &__create-button {
+        font-size: large;
+        justify-self: end;
+        min-height: 1rem;
+        line-height: 1rem;
+    }
 }
+
+//Modal------------------>
 
 .modal {
     min-width: 300px;
@@ -157,20 +183,14 @@ html {
             cursor: pointer;
             }
         }
-
-        .submit-button {
-            margin-top: 1rem;
-            background-color: $primary;
-            padding: 0.5rem;
-            border-radius: 5px;
-            border: none;
-            transition: background-color 300ms ease;
-
-            &:is(:hover,
-            :focus,:active) {
-            background-color: $highlight2;
-            cursor: pointer;
-            }
-        }
     }
+
+    &__submit-button {
+            margin-top: 1rem;
+    }   
 }
+
+//JS CSS
+    .markedDiv {
+        background-color: $highlight2;
+    }
