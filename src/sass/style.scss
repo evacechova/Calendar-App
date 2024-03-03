@@ -89,11 +89,12 @@ html {
 
     .day-no {
         padding: 0.5rem;
-        border-radius: 2.5px;
+        line-height:2rem;
+        border-radius: 50%;
         transition: background-color 300ms ease;
     }
         
-    .day-no:is(:hover,
+    .day-no.has-number:is(:hover,
     :focus,:active) {
     background-color: $highlight2;
     cursor: pointer;
@@ -113,6 +114,7 @@ html {
         font-size: large;
         justify-self: end;
         min-height: 1rem;
+        min-width: 3rem;
         line-height: 1rem;
     }
 }
@@ -191,6 +193,10 @@ html {
 }
 
 //JS CSS
-    .markedDiv {
+    div.markedDiv {
         background-color: $highlight2;
+    }
+
+    .divWithEvent {
+        background-color: $highlight;
     }

@@ -31,6 +31,8 @@ const nextMonth = () => {
     dayPointer = firstDayOfMonth (year, monthIndex);
     monthLength = daysInMonth(year, monthIndex);
     dayToDivAssignment();
+
+    highlightDayWithEvent(testEvent, year, monthIndex+1);
 }
 
 const previousMonth = () => {
@@ -51,6 +53,7 @@ const previousMonth = () => {
     dayPointer = firstDayOfMonth (year, monthIndex);
     monthLength = daysInMonth(year, monthIndex);
     dayToDivAssignment();
+    highlightDayWithEvent(testEvent, year, monthIndex+1);
 }
 
 setMonth(`${monthNav[thisMonth]} ${thisYear}`);
@@ -83,9 +86,14 @@ const dayToDivAssignment = () => {
         dayPointer--;
     }
 
+    for(const div of dayDivs) {
+        div.classList.remove('has-number');
+    }
+
     for (let i = 1; i <= monthLength; i++) {
+        dayDivs[dayPointer].classList.add('has-number');
         dayDivs[dayPointer].textContent = i;
-        dayPointer++;
+        dayPointer++;    
         // console.log(i);    
         // console.log(dayPointer);
     }
@@ -166,18 +174,49 @@ modalSubmitButton.addEventListener('click', (e) => {
 const testEvent = {
     eventDescription: "Filmový festival",
     eventStart: "2024-03-12",
-    eventEnd: "2024-03-14"
+    eventEnd: "2024-03-21"
 }
 
-const highlightDayWithEvent = (argEvent, argYear, argMonth, argDay) => {
-    const [year, month, day] = argEvent.eventStart.split('-');
+const highlightDayWithEvent = (argEvent, argYear, argMonth) => {
+    const [year1, month1, day1] = argEvent.eventStart.split('-');
+    const [year2, month2, day2] = argEvent.eventEnd.split('-');
+    for(const div of dayDivs) {
+        div.classList.remove('divWithEvent');
+    }
     
-    if(year !== argYear) {
+    if(year1 != argYear) {
         return;
     }
-    if(month !== argMonth) {
+    if(+month1 != argMonth) {
         return;
     }
-    for()
-    
+    for(const div of dayDivs) {
+        if(div.textContent >= +day1 && div.textContent <= +day2) {
+            div.classList.add('divWithEvent');
+        }
+    }   
+}
+
+highlightDayWithEvent(testEvent, 2024, 3);
+
+for(const div of dayDivs) {
+    div.addEventListener('click', () => {
+        
+    const startDateFormat = new Date (testEvent.eventStart);
+    const endDateFormat = new Date (testEvent.eventEnd);
+
+    const options = {
+        weekday: "short",
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+    }   
+        if(div.classList.contains('divWithEvent')) {
+            document.querySelector('#event-description--saved').textContent = testEvent.eventDescription;
+            document.querySelector('#event-date--saved').textContent = `${startDateFormat.toLocaleString('cs-CZ', options)} – ${endDateFormat.toLocaleString('cs-CZ', options)}`;
+        } else {
+            document.querySelector('#event-description--saved').textContent = "Žádná událost";
+            document.querySelector('#event-date--saved').textContent = "xx dd.mm.rrrr – yy dd.mm.rrrr";
+        }
+    })
 }
